@@ -18,7 +18,7 @@ function escolherJogadaJogador() {
           resolve(escolha);
         } else {
           console.log("Jogada inválida. Você perdeu o jogo!");
-          resolve(-1); // Indica uma jogada inválida
+          resolve(-1);
         }
       }
     );
@@ -69,9 +69,8 @@ function determinarVencedor(escolhaJogador, escolhaComputador) {
 
 async function jogarJokenpo() {
   console.log("Bem-vindo ao jogo Pedra-papel-tesoura-lagarto-Spock!");
-  console.log("      _______");
+  console.log("      .---._");
   console.log("  ---'   ____)");
-  console.log("        (_____)");
   console.log("        (_____)");
   console.log("        (____)");
   console.log("  ---.__(___)\n");
@@ -92,7 +91,7 @@ async function jogarJokenpo() {
     const escolhaJogador = await escolherJogadaJogador();
 
     if (escolhaJogador === -1) {
-      break; // Jogo acabou devido a uma jogada inválida
+      break;
     }
 
     const escolhaComputador = escolherJogadaComputador();
@@ -107,7 +106,7 @@ async function jogarJokenpo() {
     if (resultado === "Você ganhou!") {
       pontuacaoJogador++;
     } else if (resultado === "Você perdeu!") {
-      break; // Jogo acabou porque o jogador perdeu
+      break;
     }
   }
 
