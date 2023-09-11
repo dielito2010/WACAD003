@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de Gráfico de Barras</title>
+    <style>
+      .grafico {
+        display: flex;
+      }
+
+      .barra {
+        background-color: red;
+        margin-right: 10px;
+        margin-top: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gerador de Gráficos de Barras em Pixels</h1>
+    <label for="altura">Informe a altura das barras: </label>
+    <input type="number" name="altura" id="1" />
+    <input type="number" name="altura" id="2" />
+    <input type="number" name="altura" id="3" />
+    <input type="number" name="altura" id="4" />
+    <input type="number" name="altura" id="5" /><br /><br />
+    <label for="largura">Informe a largura das barras</label>
+    <input type="number" name="largura" id="largura" /><br /><br />
+    <button id="gerar" onclick="gerar()">Desenhar o gráfico:</button
+    ><br /><br />
+    <div class="grafico"></div>
+
+    <script>
+      function gerar() {
+        const valores = [];
+        for (let i = 1; i <= 5; i++) {
+          const altura = document.getElementById(i).value;
+          valores.push(altura);
+        }
+
+        const largura = document.getElementById("largura").value;
+        const grafico = document.querySelector(".grafico");
+        grafico.innerHTML = "";
+
+        for (const altura of valores) {
+          const barra = document.createElement("div");
+          barra.classList.add("barra");
+          barra.style.height = `${altura}px`;
+          barra.style.width = `${largura}px`;
+          grafico.appendChild(barra);
+        }
+      }
+    </script>
+  </body>
+</html>

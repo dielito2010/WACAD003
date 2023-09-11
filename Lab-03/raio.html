@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raio</title>
+  </head>
+  <body>
+    <label for="raio">Informe o raio: </label>
+    <input type="number" name="raio" id="raio" />
+    <button id="ok" onclick="calculaRaio()">Ok</button><br /><br />
+    <label for="area">Área do círculo: </label>
+    <input type="number" name="area" id="area" /><br /><br />
+    <label for="circunferencia">Circunferência: </label>
+    <input type="number" name="circuferencia" id="circunferencia" />
+    <script>
+      function calculaRaio() {
+        const raio = parseFloat(document.getElementById("raio").value);
+        if (!isNaN(raio)) {
+          const area = Math.PI * Math.pow(raio, 2);
+          const circunferencia = 2 * Math.PI * raio;
+          document.getElementById("area").value = area.toFixed(2);
+          document.getElementById("circunferencia").value =
+            circunferencia.toFixed(2);
+        } else {
+          alert("Por favor, insira um valor válido para o raio.");
+        }
+      }
+    </script>
+  </body>
+</html>
